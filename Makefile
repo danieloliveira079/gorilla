@@ -15,7 +15,7 @@ ENV= \
 .PHONY: up setup down build shell release
 
 up:
-	docker run -it --rm --name $(NAME) $(VOLUMES) $(PORTS) $(WORKDIR) node:8 bash # -c "npm run start"
+	docker run -it --rm --name $(NAME) $(VOLUMES) $(PORTS) $(WORKDIR) node:8 bash -c "npm run dev"
 
 setup:
 		docker run -it --rm --name $(NAME) $(VOLUMES) $(PORTS) $(WORKDIR) node:8 bash -c "npm install -g yarn && yarn && cd client && yarn"
